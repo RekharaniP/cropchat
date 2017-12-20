@@ -3,10 +3,8 @@
  <div class = "mdl-grid">
  <div class = "mdl-cell mdl-cell--3-col mdl-cell mdl-cell--1-col-tablet mdl-cell--hide-phone">
  <div class = "mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
- <div v-for="picture in this.pictures" class = "image-card" @click = "displayDetails(picture.id)">
- <div class = "image-card__picture">
- <img :src="picture.url"/>
- </div>
+ <div v-for="picture in this.pictures" class = "image-card">
+ <h1>picture.id </h1>
  <div class = "image-card__comment mdl-card__actions">
  <span>{{picture.comment}}</span>
  </div>
@@ -20,7 +18,7 @@
  </div>
 </template>
 <script>
-import data from '../data'
+import testdata from '../data'
 var app = ""
 
 export default{
@@ -31,10 +29,12 @@ this.$router.push({name:'detail',parns: {id:id}})
 },
 
 data (){
-console.log(data.testthis());
-return {
+console.log("this is "+testdata.testthis2())
 
-'pictures': data.testthis()
+return {
+//var count = Object.keys(testdata.testthis2()).length;
+
+'pictures': (testdata.testthis2())
 }
 }
 }
