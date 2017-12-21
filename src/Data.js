@@ -42,10 +42,10 @@ export default {
       
 
   axios.get('http://jsonplaceholder.typicode.com/todos')
-    .then(function (response) {
+    .then( (response) => {
       var count = Object.keys(response.data).length
-      console.log("Succes!!!!!"+count);
-      return response.data;
+      console.log("Succes!!!!!"+response.data[0].id);
+      return count;
       
     })
     .catch(function (error) {
