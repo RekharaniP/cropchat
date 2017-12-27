@@ -10,8 +10,8 @@
       <nav class="mdl-navigation">
         <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
         <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">New Process</router-link>
-        <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">My Tasks</router-link>
-        <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">Task Assignment</router-link>
+        <router-link class="mdl-navigation__link" to="/mytask" @click.native="hideMenu">My Tasks</router-link>
+        <router-link class="mdl-navigation__link" to="/mytask" @click.native="hideMenu">Task Assignment</router-link>
         <router-link class="mdl-navigation__link" to="/about" @click.native="hideMenu">About</router-link>
 
       </nav>

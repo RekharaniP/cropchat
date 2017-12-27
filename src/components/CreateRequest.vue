@@ -2,8 +2,7 @@
  <div>
 <h1> Welcome to Service Request </h1>
 
-<p> Click here to create new Request</p><p>
-<router-link class="mdl-navigation__link" to="/createrequest" @click.native="hideMenu">Created New Request</router-link>
+<p> This is Create Request Form</p><p>
 </p>   
 </div>
  
