@@ -28,7 +28,7 @@
             <p class="text-danger" v-if="errors.has('secret')">{{ errors.first('secret') }}</p>
         </div>
 
-        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+        <button v-on:click="greet()"  class="btn btn-primary btn-block" type="submit" >Submit</button>
     </form>
     <div v-else>
       <h1 class="submitted">Form submitted successfully!</h1>
@@ -38,6 +38,7 @@
 
 <script>
 import Vue from 'vue'
+import axios from 'axios'
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 VeeValidate.Validator.extend('passphrase', {
@@ -63,7 +64,28 @@ export default {
       },
     submitForm(){
       this.formSubmitted = true
-    }
+    },
+  
+  greet(){
+    axios.post('http://kermit:kermit@localhost:8080/flowable-rest/service/runtime/process-instances', {
+      
+   "processDefinitionId":"easyflow:2:2544",
+   "businessKey":"easyflow",
+   "returnVariables":true,
+   "variables": [
+      {
+        "name":"myVar",
+        "value":"This is a variable"
+      }
+   ]
+
+    })
+    .then(response => {})
+    .catch(e => {
+      this.errors.push(e)
+    });
+    console.log("hello");
+  }
   }
 }
 </script>
